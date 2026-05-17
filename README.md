@@ -1,6 +1,6 @@
 # gugu
 
-Simple Node.js API server using Express, MongoDB, and Mongoose.
+Simple Node.js API server using Express, MongoDB, and Mongoose for a personal search engine.
 
 ## Setup
 
@@ -42,14 +42,16 @@ http://localhost:5000
 
 - `GET /` - server info
 - `GET /health` - health check
-- `GET /api/users` - list users
-- `POST /api/users` - create a user
+- `GET /api/documents` - list indexed documents
+- `GET /api/documents/search?q=scholarship` - search indexed documents
+- `POST /api/documents` - create an indexed document
 
-Example user payload:
+Example document payload:
 
 ```json
 {
-  "name": "Ada Lovelace",
-  "email": "ada@example.com"
+  "title": "MEXT Scholarship 2027",
+  "url": "https://example.com/mext",
+  "content": "MEXT scholarship is available for Nigerian students..."
 }
 ```

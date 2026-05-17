@@ -4,7 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import connectDB from './config/db.js';
-import userRoutes from './routes/userRoutes.js';
+import documentRoutes from './routes/documentRoutes.js';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -24,7 +24,7 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-app.use('/api/users', userRoutes);
+app.use('/api/documents', documentRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
